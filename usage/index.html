@@ -15,14 +15,12 @@
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_custom.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
-  <link href="../css/theme_custom.css" rel="stylesheet">
 
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script>
-  <script src="../js/theme.js"></script>
-  <script src="../js/theme_custom.js"></script> 
+  <script src="../js/theme.js"></script> 
 
   
 </head>
@@ -107,25 +105,26 @@
 </div>
           <div role="main">
             <div class="section">
-              <h1 id="usage">Usage</h1>
-<h2 id="exporting-html">Exporting HTML</h2>
+              <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
+<h2 id="exporting-html"><a name="user-content-exporting-html" href="#exporting-html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exporting HTML</h2>
 <p>ExportHtml comes with a number of default commands available, but these can be overridden in the settings file.  Or you can create commands directly outside of the settings file bound to the command palette, key bindings, or even the menu.</p>
-<p>If adding a command to the settings file, it goes under the <code class="inlinehilite language-text">html_panel</code> setting.  These configurations will appear under the <code class="inlinehilite language-text">Export to HTML: Show Export Menu</code> command palette command.</p>
-<pre><code class="javascript">// Define configurations for the drop down export menu
-&quot;html_panel&quot;: [
-    // Browser print color (selections and multi-selections allowed)
-    {
-        &quot;Browser Print - Color&quot;: {
-            &quot;numbers&quot;: true,
-            &quot;wrap&quot;: 900,
-            &quot;browser_print&quot;: true,
-            &quot;multi_select&quot;: true,
-            &quot;color_scheme&quot;: &quot;Packages/ExportHtml/ColorSchemes/Print-Color.tmTheme&quot;,
-            &quot;style_gutter&quot;: false
-        }
-    }
- ]
-</code></pre>
+<p>If adding a command to the settings file, it goes under the <code>html_panel</code> setting.  These configurations will appear under the <code>Export to HTML: Show Export Menu</code> command palette command.</p>
+<div class="codehilite"><pre><span class="c1">// Define configurations for the drop down export menu</span>
+<span class="s2">&quot;html_panel&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="c1">// Browser print color (selections and multi-selections allowed)</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;Browser Print - Color&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;numbers&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">&quot;wrap&quot;</span><span class="o">:</span> <span class="mi">900</span><span class="p">,</span>
+            <span class="s2">&quot;browser_print&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">&quot;multi_select&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">&quot;color_scheme&quot;</span><span class="o">:</span> <span class="s2">&quot;Packages/ExportHtml/ColorSchemes/Print-Color.tmTheme&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;style_gutter&quot;</span><span class="o">:</span> <span class="kc">false</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+ <span class="p">]</span>
+</pre></div>
+
 
 <p>The name of the command is the key value, and then you add the parameters you wish to specify.  You can use any combination of settings below.</p>
 <table>
@@ -145,22 +144,22 @@
 <tr>
 <td>style_gutter</td>
 <td>boolean</td>
-<td>Style gutter with theme backgrounds and foregrounds, or just use the default background/foreground.  Default is <code class="inlinehilite language-text">true</code>.</td>
+<td>Style gutter with theme backgrounds and foregrounds, or just use the default background/foreground.  Default is <code>true</code>.</td>
 </tr>
 <tr>
 <td>multi_select</td>
 <td>boolean</td>
-<td>If multiple regions are selected in a document, only export what is under those selections. By default only the first selection is recognized.  Default is <code class="inlinehilite language-text">false</code>.</td>
+<td>If multiple regions are selected in a document, only export what is under those selections. By default only the first selection is recognized.  Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td>highlight_selections</td>
 <td>boolean</td>
-<td>Highlights all selections in HTML output using the themes selection colors.  Multi-select option will be ignored if this is set <code class="inlinehilite language-text">true</code>.  Default is <code class="inlinehilite language-text">false</code>.</td>
+<td>Highlights all selections in HTML output using the themes selection colors.  Multi-select option will be ignored if this is set <code>true</code>.  Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td>ignore_selections</td>
 <td>boolean</td>
-<td>Ignores selections in the view.  If this is set, <code class="inlinehilite language-text">multi_select</code> and <code class="inlinehilite language-text">highlight_selections</code> will be treated as <code class="inlinehilite language-text">false</code> regardless of their actual value.</td>
+<td>Ignores selections in the view.  If this is set, <code>multi_select</code> and <code>highlight_selections</code> will be treated as <code>false</code> regardless of their actual value.</td>
 </tr>
 <tr>
 <td>wrap</td>
@@ -170,95 +169,97 @@
 <tr>
 <td>color_scheme</td>
 <td>string</td>
-<td>The color scheme (tmTheme) file you would like to use.  By default the current color scheme file is used, or the the alternate default color scheme if defined in the setting <code class="inlinehilite language-text">alternate_scheme</code>.</td>
+<td>The color scheme (tmTheme) file you would like to use.  By default the current color scheme file is used, or the the alternate default color scheme if defined in the setting <code>alternate_scheme</code>.</td>
 </tr>
 <tr>
 <td>clipboard_copy</td>
 <td>boolean</td>
-<td>Copy html to the clipboard after generation. Default is <code class="inlinehilite language-text">false</code>.</td>
+<td>Copy html to the clipboard after generation. Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td>browser_print</td>
 <td>boolean</td>
-<td>When opening in the web browser, also open the brower&rsquo;s print dialog. This will be ignored if <code class="inlinehilite language-text">view_open</code> is <code class="inlinehilite language-text">true</code>.  Default is <code class="inlinehilite language-text">false</code>.</td>
+<td>When opening in the web browser, also open the brower&rsquo;s print dialog. This will be ignored if <code>view_open</code> is <code>true</code>.  Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td>view_open</td>
 <td>boolean</td>
-<td>Open HTML in a Sublime Text tab instead of the web browser.  Default is <code class="inlinehilite language-text">false</code>.</td>
+<td>Open HTML in a Sublime Text tab instead of the web browser.  Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td>no_header</td>
 <td>boolean</td>
-<td>Do not display file name, date, and time at the top of the HTML document. Default is <code class="inlinehilite language-text">false</code>.</td>
+<td>Do not display file name, date, and time at the top of the HTML document. Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td>date_time_format</td>
 <td>string</td>
-<td>String denoting the format for date and time when displaying header.  Please see Python&rsquo;s documentation on <code class="inlinehilite language-text">time.strftime</code> for detailed info on formatting syntax.  Default is <code class="inlinehilite language-text">&quot;%m/%d/%y %I:%M:%S&quot;</code>.</td>
+<td>String denoting the format for date and time when displaying header.  Please see Python&rsquo;s documentation on <code>time.strftime</code> for detailed info on formatting syntax.  Default is <code>&quot;%m/%d/%y %I:%M:%S&quot;</code>.</td>
 </tr>
 <tr>
 <td>show_full_path</td>
 <td>boolean</td>
-<td>Show full path for filename when displaying header. Default is <code class="inlinehilite language-text">true</code>.</td>
+<td>Show full path for filename when displaying header. Default is <code>true</code>.</td>
 </tr>
 <tr>
 <td>save_location</td>
 <td>string</td>
-<td>Path to save html file.  If the file is wanted in the same file as the original, use &ldquo;.&rdquo;.  Otherwise, use the absolute path to where the file is desired.  If there is an issue determining where to save the file, or the path does not exist, the OS temp folder will be used. Default is <code class="inlinehilite language-text">None</code> (use temp folder).</td>
+<td>Path to save html file.  If the file is wanted in the same file as the original, use &ldquo;.&rdquo;.  Otherwise, use the absolute path to where the file is desired.  If there is an issue determining where to save the file, or the path does not exist, the OS temp folder will be used. Default is <code>None</code> (use temp folder).</td>
 </tr>
 <tr>
 <td>time_stamp</td>
 <td>string</td>
-<td>Configure the time stamp of saved html when using <code class="inlinehilite language-text">save_location</code>.  To remove time stamps, just set to an empty string <code class="inlinehilite language-text">&quot;&quot;</code>.  Please see Python&rsquo;s documentation on <code class="inlinehilite language-text">time.strftime</code> for detailed info on formatting syntax.  Default is <code class="inlinehilite language-text">&quot;_%m%d%y%H%M%S&quot;</code>.</td>
+<td>Configure the time stamp of saved html when using <code>save_location</code>.  To remove time stamps, just set to an empty string <code>&quot;&quot;</code>.  Please see Python&rsquo;s documentation on <code>time.strftime</code> for detailed info on formatting syntax.  Default is <code>&quot;_%m%d%y%H%M%S&quot;</code>.</td>
 </tr>
 <tr>
 <td>toolbar</td>
 <td>array of strings</td>
-<td>Option to display a toolbar with to access features in a generated HTML.  This setting is an array of keywords that represent the icons in the toolbar to show.  Valid keywords include <code class="inlinehilite language-text">gutter</code>, <code class="inlinehilite language-text">print</code>, <code class="inlinehilite language-text">plain_text</code>, <code class="inlinehilite language-text">annotation</code>, <code class="inlinehilite language-text">theme</code>, and <code class="inlinehilite language-text">wrapping</code>.  Toolbar will appear when you mouse over the uppert right corner of the window of the generated html.  Default enables all.</td>
+<td>Option to display a toolbar with to access features in a generated HTML.  This setting is an array of keywords that represent the icons in the toolbar to show.  Valid keywords include <code>gutter</code>, <code>print</code>, <code>plain_text</code>, <code>annotation</code>, <code>theme</code>, and <code>wrapping</code>.  Toolbar will appear when you mouse over the uppert right corner of the window of the generated html.  Default enables all.</td>
 </tr>
 <tr>
 <td>filter</td>
 <td>string</td>
-<td>Filters to use on the theme&rsquo;s colors.  The string is a sequence of filters separated by <code class="inlinehilite language-text">;</code>.  The accepted filters are <code class="inlinehilite language-text">grayscale</code>, <code class="inlinehilite language-text">invert</code>, <code class="inlinehilite language-text">sepia</code>, <code class="inlinehilite language-text">brightness</code>, <code class="inlinehilite language-text">glow</code>, <code class="inlinehilite language-text">saturation</code>, <code class="inlinehilite language-text">hue</code>, and <code class="inlinehilite language-text">colorize</code>.  <code class="inlinehilite language-text">brightness</code> and <code class="inlinehilite language-text">saturation</code> requires a float parameter to specify to what magnitude the filter should be applied at.  <code class="inlinehilite language-text">glow</code> requires a float for intensity (usually something like .1 or .2 is sufficient).  <code class="inlinehilite language-text">hue</code> and <code class="inlinehilite language-text">colorize</code> take a float that represents a degree.  <code class="inlinehilite language-text">hue</code> shifts the hue via the degree given (can accept negative degrees); hues will wrap if they extend past 0 degrees or 360 degrees.  Example: <code class="inlinehilite language-text">&quot;filter&quot;: &quot;sepia;invert;brightness(1.1);saturation(1.3);&quot;</code>.  Default is <code class="inlinehilite language-text">&quot;&quot;</code>.</td>
+<td>Filters to use on the theme&rsquo;s colors.  The string is a sequence of filters separated by <code>;</code>.  The accepted filters are <code>grayscale</code>, <code>invert</code>, <code>sepia</code>, <code>brightness</code>, <code>glow</code>, <code>saturation</code>, <code>hue</code>, and <code>colorize</code>.  <code>brightness</code> and <code>saturation</code> requires a float parameter to specify to what magnitude the filter should be applied at.  <code>glow</code> requires a float for intensity (usually something like .1 or .2 is sufficient).  <code>hue</code> and <code>colorize</code> take a float that represents a degree.  <code>hue</code> shifts the hue via the degree given (can accept negative degrees); hues will wrap if they extend past 0 degrees or 360 degrees.  Example: <code>&quot;filter&quot;: &quot;sepia;invert;brightness(1.1);saturation(1.3);&quot;</code>.  Default is <code>&quot;&quot;</code>.</td>
 </tr>
 <tr>
 <td>shift_brightness</td>
 <td>bool</td>
-<td>This setting shifts the entire theme&rsquo;s brightness if a background color&rsquo;s luminace is below the global setting <code class="inlinehilite language-text">bg_min_lumen_threshold</code>.  This was added to solve an issue that I had when copying dark themes into an outlook email; if a html span had a background that was too dark, the foreground would just be white.  This allows me to not have to worry about how dark the theme is, and probably serves very little use besides that.</td>
+<td>This setting shifts the entire theme&rsquo;s brightness if a background color&rsquo;s luminace is below the global setting <code>bg_min_lumen_threshold</code>.  This was added to solve an issue that I had when copying dark themes into an outlook email; if a html span had a background that was too dark, the foreground would just be white.  This allows me to not have to worry about how dark the theme is, and probably serves very little use besides that.</td>
 </tr>
 </tbody>
 </table>
 <p>If you wish to bind a command to a key combination etc., the same settings as above can be used.</p>
 <p>Example:</p>
-<pre><code class="javascript">{
-    &quot;keys&quot;: [&quot;ctrl+alt+n&quot;],
-    &quot;command&quot;: &quot;export_html&quot;,
-    &quot;args&quot;: {
-        &quot;numbers&quot;: true,
-        &quot;wrap&quot;: 900,
-        &quot;browser_print&quot;: true,
-        &quot;multi_select&quot;: true,
-        &quot;color_scheme&quot;: &quot;Packages/ExportHtml/ColorSchemes/Print-Color.tmTheme&quot;,
-        &quot;style_gutter&quot;: false
-    }
-}
-</code></pre>
+<div class="codehilite"><pre><span class="p">{</span>
+    <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+alt+n&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;export_html&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;numbers&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">&quot;wrap&quot;</span><span class="o">:</span> <span class="mi">900</span><span class="p">,</span>
+        <span class="s2">&quot;browser_print&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">&quot;multi_select&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">&quot;color_scheme&quot;</span><span class="o">:</span> <span class="s2">&quot;Packages/ExportHtml/ColorSchemes/Print-Color.tmTheme&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;style_gutter&quot;</span><span class="o">:</span> <span class="kc">false</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 
 <p>When viewing the HTML in your web browser, regardless of the gutter settings, the gutter can be toggled to show or be hidden using the toolbar.</p>
-<h2 id="exporting-bbcode">Exporting BBCode</h2>
+<h2 id="exporting-bbcode"><a name="user-content-exporting-bbcode" href="#exporting-bbcode" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exporting BBCode</h2>
 <p>ExportHtml can also export selected code as BBCode for posting in forums. Exporting BBCode is very similar to exporting HTML code.</p>
-<p>If adding a command to the settings file, it goes under the <code class="inlinehilite language-text">bbcode_panel</code> setting.  These configurations will appear under the <code class="inlinehilite language-text">Export to BBCode: Show Export Menu</code> command palette command.</p>
-<pre><code class="javascript">// Define configurations for the drop down export menu
-&quot;bbcode_panel&quot;: [
-    {
-        &quot;To Clipboard - Format as BBCode&quot;: {
-            &quot;numbers&quot;: false,
-            &quot;multi_select&quot;: true
-        }
-    }
-]
-</code></pre>
+<p>If adding a command to the settings file, it goes under the <code>bbcode_panel</code> setting.  These configurations will appear under the <code>Export to BBCode: Show Export Menu</code> command palette command.</p>
+<div class="codehilite"><pre><span class="c1">// Define configurations for the drop down export menu</span>
+<span class="s2">&quot;bbcode_panel&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;To Clipboard - Format as BBCode&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;numbers&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">&quot;multi_select&quot;</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
 
 <p>The name of the command is the key value, and then you add the parameters you wish to specify.  You can use any combination of settings below.</p>
 <table>
@@ -278,48 +279,49 @@
 <tr>
 <td>multi_select</td>
 <td>boolean</td>
-<td>If multiple regions are selected in a document, only export what is under those selections. By default only the first selection is recognized.  Default is <code class="inlinehilite language-text">false</code>.</td>
+<td>If multiple regions are selected in a document, only export what is under those selections. By default only the first selection is recognized.  Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td>ignore_selections</td>
 <td>boolean</td>
-<td>Ignores selections in the view.  If this is set, <code class="inlinehilite language-text">multi_select</code> will be treated as <code class="inlinehilite language-text">false</code> regardless of its actual value.</td>
+<td>Ignores selections in the view.  If this is set, <code>multi_select</code> will be treated as <code>false</code> regardless of its actual value.</td>
 </tr>
 <tr>
 <td>color_scheme</td>
 <td>string</td>
-<td>The color scheme (tmTheme) file you would like to use.  By default the current color scheme file is used, or the the alternate default color scheme if defined in the setting <code class="inlinehilite language-text">alternate_scheme</code>.</td>
+<td>The color scheme (tmTheme) file you would like to use.  By default the current color scheme file is used, or the the alternate default color scheme if defined in the setting <code>alternate_scheme</code>.</td>
 </tr>
 <tr>
 <td>clipboard_copy</td>
 <td>boolean</td>
-<td>Copy BBCode to the clipboard after generation. Default is <code class="inlinehilite language-text">true</code>.</td>
+<td>Copy BBCode to the clipboard after generation. Default is <code>true</code>.</td>
 </tr>
 <tr>
 <td>view_open</td>
 <td>boolean</td>
-<td>Open txt file of BBCode in a Sublime Text tab.  Default is <code class="inlinehilite language-text">false</code>.</td>
+<td>Open txt file of BBCode in a Sublime Text tab.  Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td>no_header</td>
 <td>boolean</td>
-<td>Do not display file name, date, and time at the top of the HTML document. Default is <code class="inlinehilite language-text">false</code>.</td>
+<td>Do not display file name, date, and time at the top of the HTML document. Default is <code>false</code>.</td>
 </tr>
 </tbody>
 </table>
 <p>If you wish to bind a command to a key combination etc., the same settings as above can be used.</p>
 <p>Example:</p>
-<pre><code class="javascript">{
-    &quot;keys&quot;: [&quot;ctrl+alt+n&quot;],
-    &quot;command&quot;: &quot;export_bbcode&quot;,
-    &quot;args&quot;: {
-        &quot;numbers&quot;: false,
-        &quot;multi_select&quot;: true
-    }
-}
-</code></pre>
+<div class="codehilite"><pre><span class="p">{</span>
+    <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+alt+n&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;export_bbcode&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;numbers&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">&quot;multi_select&quot;</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 
-<h1 id="annotations-html-only">Annotations (HTML only)</h1>
+
+<h1 id="annotations-html-only"><a name="user-content-annotations-html-only" href="#annotations-html-only" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Annotations (HTML only)</h1>
 <p>Annotations are comments you can make on selected text.  When the HTML is generated, the selected text will be underlined, and when the mouse hovers over them, a tooltip will appear with your comment.</p>
 <p><img src="http://dl.dropbox.com/u/342698/ExportHtml/annotation_preview.png" border="0"/></p>
 <p>In order to use annotations, you must enter into an &ldquo;Annotation Mode&rdquo;.  This puts your file in a read only state.  At this point, you can select text and create annotations using the annotation commands provided.  When you leave the &ldquo;Annotation Mode&rdquo;, all annotations will be lost.  So you must print before leaving annotation mode.</p>
@@ -361,7 +363,7 @@
 </table>
 <p>You can navigate the annotations in the generate HTML by using a jump table.  You can show the jump table at any time by selecting the annotation button in the toolbar.  You can also click any annotation to show the jump table as well.  If it gets in the way, you can dock it in a different location.</p>
 <p><img src="http://dl.dropbox.com/u/342698/ExportHtml/annotation_table_preview.png" border="0"/></p>
-<h2 id="settings-file-options">Settings File options</h2>
+<h2 id="settings-file-options"><a name="user-content-settings-file-options" href="#settings-file-options" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Settings File options</h2>
 <table>
 <thead>
 <tr>
@@ -379,12 +381,12 @@
 <tr>
 <td>alternate_font_size</td>
 <td>int or false</td>
-<td>Define an alternate font_size to use by default instead of the current one in use.  Use the current one in use if set to a literal <code class="inlinehilite language-text">false</code>.  Default is <code class="inlinehilite language-text">false</code>.</td>
+<td>Define an alternate font_size to use by default instead of the current one in use.  Use the current one in use if set to a literal <code>false</code>.  Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td>alternate_font_face</td>
 <td>string or false</td>
-<td>Define an alternate font_face to use by default instead of the current one in use.  Use the current one in use if set to a literal <code class="inlinehilite language-text">false</code>.  Default is <code class="inlinehilite language-text">false</code>.</td>
+<td>Define an alternate font_face to use by default instead of the current one in use.  Use the current one in use if set to a literal <code>false</code>.  Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td>valid_selection_size</td>
@@ -394,12 +396,12 @@
 <tr>
 <td>html_panel</td>
 <td>array of commands</td>
-<td>Define export configurations to appear under the <code class="inlinehilite language-text">Export to HTML: Show Export Menu</code> command palette command.</td>
+<td>Define export configurations to appear under the <code>Export to HTML: Show Export Menu</code> command palette command.</td>
 </tr>
 <tr>
 <td>bbcode_panel</td>
 <td>array of commands</td>
-<td>Define export configurations to appear under the <code class="inlinehilite language-text">Export to BBCode: Show Export Menu</code> command palette command.</td>
+<td>Define export configurations to appear under the <code>Export to BBCode: Show Export Menu</code> command palette command.</td>
 </tr>
 </tbody>
 </table>
@@ -419,13 +421,13 @@
 
   <div role="contentinfo">
     <p>
-    <!-- Copyright etc -->
+    
     </p>
   </div>
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+    
         </div>
       </div>
 
@@ -445,7 +447,7 @@
 
 <!--
 MkDocs version  : 0.12.1
-Docs Build Date : 2015-04-21 05:04:34.725670
+Docs Build Date : 2015-04-22 04:56:31.208795
 -->
 </body>
 </html>
