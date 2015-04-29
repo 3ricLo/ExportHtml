@@ -33,7 +33,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> ExportHtml Documentation</a>
-        
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -53,9 +57,10 @@
                 
                     <ul>
                     
-                        <li class="toctree-l3"><a href="#usage">Usage</a></li>
+                        <li class="toctree-l3"><a href="#user-guide">User Guide</a></li>
                         
-                            <li><a class="toctree-l4" href="#exporting-html">Exporting HTML</a></li>
+                    
+                        <li class="toctree-l3"><a href="#exporting-html">Exporting HTML</a></li>
                         
                             <li><a class="toctree-l4" href="#exporting-bbcode">Exporting BBCode</a></li>
                         
@@ -92,21 +97,26 @@
   <ul class="wy-breadcrumbs">
     <li><a href="..">Docs</a> &raquo;</li>
     
+      
+    
     <li>User Guide</li>
-      <li class="wy-breadcrumbs-aside">
+    <li class="wy-breadcrumbs-aside">
+      
         
-          
-            <a href="https://github.com/facelessuser/ExportHtml" class="icon icon-github"> Edit on GitHub</a>
-          
+          <a href="https://github.com/facelessuser/ExportHtml" class="icon icon-github"> Edit on GitHub</a>
         
-      </li>
+      
+    </li>
   </ul>
   <hr/>
 </div>
           <div role="main">
             <div class="section">
-              <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
-<h2 id="exporting-html"><a name="user-content-exporting-html" href="#exporting-html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exporting HTML</h2>
+              
+                <h1 class="doctitle" id="user-guide"><a name="user-content-user-guide" href="#user-guide" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>User Guide</h1>
+<p class="doctitle-info">Configuring and using ExportHtml<br /></p>
+<hr />
+<h1 id="exporting-html"><a name="user-content-exporting-html" href="#exporting-html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exporting HTML</h1>
 <p>ExportHtml comes with a number of default commands available, but these can be overridden in the settings file.  Or you can create commands directly outside of the settings file bound to the command palette, key bindings, or even the menu.</p>
 <p>If adding a command to the settings file, it goes under the <code>html_panel</code> setting.  These configurations will appear under the <code>Export to HTML: Show Export Menu</code> command palette command.</p>
 <div class="codehilite"><pre><span class="c1">// Define configurations for the drop down export menu</span>
@@ -179,7 +189,7 @@
 <tr>
 <td>browser_print</td>
 <td>boolean</td>
-<td>When opening in the web browser, also open the brower&rsquo;s print dialog. This will be ignored if <code>view_open</code> is <code>true</code>.  Default is <code>false</code>.</td>
+<td>When opening in the web browser, also open the browser&rsquo;s print dialog. This will be ignored if <code>view_open</code> is <code>true</code>.  Default is <code>false</code>.</td>
 </tr>
 <tr>
 <td>view_open</td>
@@ -214,7 +224,7 @@
 <tr>
 <td>toolbar</td>
 <td>array of strings</td>
-<td>Option to display a toolbar with to access features in a generated HTML.  This setting is an array of keywords that represent the icons in the toolbar to show.  Valid keywords include <code>gutter</code>, <code>print</code>, <code>plain_text</code>, <code>annotation</code>, <code>theme</code>, and <code>wrapping</code>.  Toolbar will appear when you mouse over the uppert right corner of the window of the generated html.  Default enables all.</td>
+<td>Option to display a toolbar with to access features in a generated HTML.  This setting is an array of keywords that represent the icons in the toolbar to show.  Valid keywords include <code>gutter</code>, <code>print</code>, <code>plain_text</code>, <code>annotation</code>, <code>theme</code>, and <code>wrapping</code>.  Toolbar will appear when you mouse over the upper right corner of the window of the generated html.  Default enables all.</td>
 </tr>
 <tr>
 <td>filter</td>
@@ -224,7 +234,7 @@
 <tr>
 <td>shift_brightness</td>
 <td>bool</td>
-<td>This setting shifts the entire theme&rsquo;s brightness if a background color&rsquo;s luminace is below the global setting <code>bg_min_lumen_threshold</code>.  This was added to solve an issue that I had when copying dark themes into an outlook email; if a html span had a background that was too dark, the foreground would just be white.  This allows me to not have to worry about how dark the theme is, and probably serves very little use besides that.</td>
+<td>This setting shifts the entire theme&rsquo;s brightness if a background color&rsquo;s luminance is below the global setting <code>bg_min_lumen_threshold</code>.  This was added to solve an issue that I had when copying dark themes into an outlook email; if a html span had a background that was too dark, the foreground would just be white.  This allows me to not have to worry about how dark the theme is, and probably serves very little use besides that.</td>
 </tr>
 </tbody>
 </table>
@@ -345,7 +355,7 @@
 </tr>
 <tr>
 <td>Annotate Selection</td>
-<td>Annote the given selection (no multi-select support currently).</td>
+<td>Annotate the given selection (no multi-select support currently).</td>
 </tr>
 <tr>
 <td>Delete Annotation(s)</td>
@@ -405,6 +415,7 @@
 </tr>
 </tbody>
 </table>
+              
             </div>
           </div>
           <footer>
@@ -427,7 +438,7 @@
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-    
+	  
         </div>
       </div>
 
@@ -437,17 +448,19 @@
 
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
-        
-            <a href="https://github.com/facelessuser/ExportHtml" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
-        
-      <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
     </span>
 </div>
 
 <!--
-MkDocs version  : 0.12.1
-Docs Build Date : 2015-04-23 02:17:59.173369
+MkDocs version      : 0.13.0.dev
+Docs Build Date UTC : 2015-04-29 00:37:32.855966
 -->
 </body>
 </html>
