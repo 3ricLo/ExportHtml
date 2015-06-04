@@ -65,13 +65,11 @@
             
                 <li class="toctree-l3"><a href="#user-guide">User Guide</a></li>
                 
-            
-                <li class="toctree-l3"><a href="#exporting-html">Exporting HTML</a></li>
+                    <li><a class="toctree-l4" href="#exporting-html">Exporting HTML</a></li>
                 
                     <li><a class="toctree-l4" href="#exporting-bbcode">Exporting BBCode</a></li>
                 
-            
-                <li class="toctree-l3"><a href="#annotations-html-only">Annotations (HTML only)</a></li>
+                    <li><a class="toctree-l4" href="#annotations-html-only">Annotations (HTML only)</a></li>
                 
                     <li><a class="toctree-l4" href="#settings-file-options">Settings File options</a></li>
                 
@@ -134,32 +132,8 @@
                 <h1 class="doctitle" id="user-guide"><a name="user-content-user-guide" href="#user-guide" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>User Guide</h1>
 <p class="doctitle-info">Configuring and using ExportHtml<br /></p>
 <hr />
-<h1 id="exporting-html"><a name="user-content-exporting-html" href="#exporting-html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exporting HTML</h1>
+<h2 id="exporting-html"><a name="user-content-exporting-html" href="#exporting-html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exporting HTML</h2>
 <p>ExportHtml comes with a number of default commands available, but these can be overridden in the settings file.  Or you can create commands directly outside of the settings file bound to the command palette, key bindings, or even the menu.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>numbers</td>
-<td>boolean</td>
-<td>Display line numbers in the gutter.</td>
-</tr>
-<tr>
-<td>multi_select</td>
-<td>boolean</td>
-<td>If multiple regions are selected in a document, only export what is under those selections. By default only the first selection is recognized.  Default is <code>false</code>.</td>
-</tr>
-</tbody>
-</table>
-</div>
 <p>If adding a command to the settings file, it goes under the <code>html_panel</code> setting.  These configurations will appear under the <code>Export to HTML: Show Export Menu</code> command palette command.</p>
 <div class="codehilite"><pre><span class="c1">// Define configurations for the drop down export menu</span>
 <span class="s2">&quot;html_panel&quot;</span><span class="o">:</span> <span class="p">[</span>
@@ -373,7 +347,7 @@
 </pre></div>
 
 
-<h1 id="annotations-html-only"><a name="user-content-annotations-html-only" href="#annotations-html-only" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Annotations (HTML only)</h1>
+<h2 id="annotations-html-only"><a name="user-content-annotations-html-only" href="#annotations-html-only" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Annotations (HTML only)</h2>
 <p>Annotations are comments you can make on selected text.  When the HTML is generated, the selected text will be underlined, and when the mouse hovers over them, a tooltip will appear with your comment.</p>
 <p><img src="http://dl.dropbox.com/u/342698/ExportHtml/annotation_preview.png" border="0"/></p>
 <p>In order to use annotations, you must enter into an &ldquo;Annotation Mode&rdquo;.  This puts your file in a read only state.  At this point, you can select text and create annotations using the annotation commands provided.  When you leave the &ldquo;Annotation Mode&rdquo;, all annotations will be lost.  So you must print before leaving annotation mode.</p>
