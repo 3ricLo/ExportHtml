@@ -133,7 +133,7 @@
 <p class="doctitle-info">Configuring and using ExportHtml<br /></p>
 <hr />
 <h2 id="exporting-html"><a name="user-content-exporting-html" href="#exporting-html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exporting HTML</h2>
-<p>ExportHtml comes with a number of default commands available, but these can be overridden in the settings file.  Or you can create commands directly outside of the settings file bound to the command palette, key bindings, or even the menu.</p>
+<p>ExportHtml comes with a number of default commands available, but these can be overridden in the settings file.  You can also create commands directly outside of the settings file bound to the command palette, key bindings, or even the menu.</p>
 <p>If adding a command to the settings file, it goes under the <code>html_panel</code> setting.  These configurations will appear under the <code>Export to HTML: Show Export Menu</code> command palette command.</p>
 <div class="codehilite"><pre><span class="c1">// Define configurations for the drop down export menu</span>
 <span class="s2">&quot;html_panel&quot;</span><span class="o">:</span> <span class="p">[</span>
@@ -271,9 +271,9 @@
 </pre></div>
 
 
-<p>When viewing the HTML in your web browser, regardless of the gutter settings, the gutter can be toggled to show or be hidden using the toolbar.</p>
+<p>When viewing the HTML in your web browser, regardless of the gutter settings, the gutter can be toggled to show or be hidden using the toolbar in the upper right corner of the page.</p>
 <h2 id="exporting-bbcode"><a name="user-content-exporting-bbcode" href="#exporting-bbcode" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exporting BBCode</h2>
-<p>ExportHtml can also export selected code as BBCode for posting in forums. Exporting BBCode is very similar to exporting HTML code.</p>
+<p>ExportHtml can also export selected code as BBCode for posting in forums. Exporting BBCode is very similar to exporting HTML code.  But keep in mind, not all forums have all the BBCode support needed to view ExportHtmls BBCode format, so your mileage may vary.</p>
 <p>If adding a command to the settings file, it goes under the <code>bbcode_panel</code> setting.  These configurations will appear under the <code>Export to BBCode: Show Export Menu</code> command palette command.</p>
 <div class="codehilite"><pre><span class="c1">// Define configurations for the drop down export menu</span>
 <span class="s2">&quot;bbcode_panel&quot;</span><span class="o">:</span> <span class="p">[</span>
@@ -350,7 +350,7 @@
 <h2 id="annotations-html-only"><a name="user-content-annotations-html-only" href="#annotations-html-only" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Annotations (HTML only)</h2>
 <p>Annotations are comments you can make on selected text.  When the HTML is generated, the selected text will be underlined, and when the mouse hovers over them, a tooltip will appear with your comment.</p>
 <p><img src="http://dl.dropbox.com/u/342698/ExportHtml/annotation_preview.png" border="0"/></p>
-<p>In order to use annotations, you must enter into an &ldquo;Annotation Mode&rdquo;.  This puts your file in a read only state.  At this point, you can select text and create annotations using the annotation commands provided.  When you leave the &ldquo;Annotation Mode&rdquo;, all annotations will be lost.  So you must print before leaving annotation mode.</p>
+<p>In order to use annotations, you must enter into an &ldquo;Annotation Mode&rdquo;.  This puts your file in a read only state.  At this point, you can select text and create annotations using the annotation commands provided.  When you leave the &ldquo;Annotation Mode&rdquo;, all annotations will be lost.  So you must export before leaving annotation mode.</p>
 <p>You can access the annotation commands from the command palette or from the context menu.</p>
 <p>The commands are as follows:</p>
 <table>
@@ -387,7 +387,7 @@
 </tr>
 </tbody>
 </table>
-<p>You can navigate the annotations in the generate HTML by using a jump table.  You can show the jump table at any time by selecting the annotation button in the toolbar.  You can also click any annotation to show the jump table as well.  If it gets in the way, you can dock it in a different location.</p>
+<p>You can navigate the annotations in the generated HTML by using a jump table.  You can show the jump table at any time by selecting the annotation button in the toolbar.  You can also click any annotation to show the jump table as well.  If it gets in the way, you can dock it in a different location.</p>
 <p><img src="http://dl.dropbox.com/u/342698/ExportHtml/annotation_table_preview.png" border="0"/></p>
 <h2 id="settings-file-options"><a name="user-content-settings-file-options" href="#settings-file-options" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Settings File options</h2>
 <table>
