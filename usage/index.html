@@ -3,7 +3,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
   
   <title>User Guide - ExportHtml Documentation</title>
   
@@ -15,9 +18,17 @@
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_custom.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/theme_custom.css" rel="stylesheet">
 
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "User Guide";
+    var mkdocs_page_input_path = "usage.md";
+    var mkdocs_page_url = "/usage/";
+  </script>
+  
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
   <script src="../js/theme.js"></script> 
@@ -135,7 +146,7 @@
 <h2 id="exporting-html"><a name="user-content-exporting-html" href="#exporting-html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exporting HTML</h2>
 <p>ExportHtml comes with a number of default commands available, but these can be overridden in the settings file.  You can also create commands directly outside of the settings file bound to the command palette, key bindings, or even the menu.</p>
 <p>If adding a command to the settings file, it goes under the <code>html_panel</code> setting.  These configurations will appear under the <code>Export to HTML: Show Export Menu</code> command palette command.</p>
-<div class="codehilite"><pre><span class="c1">// Define configurations for the drop down export menu</span>
+<div class="codehilite"><pre><span></span><span class="c1">// Define configurations for the drop down export menu</span>
 <span class="s2">&quot;html_panel&quot;</span><span class="o">:</span> <span class="p">[</span>
     <span class="c1">// Browser print color (selections and multi-selections allowed)</span>
     <span class="p">{</span>
@@ -248,15 +259,15 @@
 <td>Filters to use on the theme&rsquo;s colors.  The string is a sequence of filters separated by <code>;</code>.  The accepted filters are <code>grayscale</code>, <code>invert</code>, <code>sepia</code>, <code>brightness</code>, <code>glow</code>, <code>saturation</code>, <code>hue</code>, and <code>colorize</code>.  <code>brightness</code> and <code>saturation</code> requires a float parameter to specify to what magnitude the filter should be applied at.  <code>glow</code> requires a float for intensity (usually something like .1 or .2 is sufficient).  <code>hue</code> and <code>colorize</code> take a float that represents a degree.  <code>hue</code> shifts the hue via the degree given (can accept negative degrees); hues will wrap if they extend past 0 degrees or 360 degrees.  Example: <code>&quot;filter&quot;: &quot;sepia;invert;brightness(1.1);saturation(1.3);&quot;</code>.  Default is <code>&quot;&quot;</code>.</td>
 </tr>
 <tr>
-<td>shift_brightness</td>
-<td>bool</td>
-<td>This setting shifts the entire theme&rsquo;s brightness if a background color&rsquo;s luminance is below the global setting <code>bg_min_lumen_threshold</code>.  This was added to solve an issue that I had when copying dark themes into an outlook email; if a html span had a background that was too dark, the foreground would just be white.  This allows me to not have to worry about how dark the theme is, and probably serves very little use besides that.</td>
+<td>disable_nbsp</td>
+<td>boolean</td>
+<td>Disable the translation of spaces into <code>&amp;nbsp;</code>.  This was originally introduced so I could copy and paste content into Microsoft Outlook.  If this is not desired, you can disable it here.</td>
 </tr>
 </tbody>
 </table>
 <p>If you wish to bind a command to a key combination etc., the same settings as above can be used.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span class="p">{</span>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+alt+n&quot;</span><span class="p">],</span>
     <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;export_html&quot;</span><span class="p">,</span>
     <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span>
@@ -275,7 +286,7 @@
 <h2 id="exporting-bbcode"><a name="user-content-exporting-bbcode" href="#exporting-bbcode" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Exporting BBCode</h2>
 <p>ExportHtml can also export selected code as BBCode for posting in forums. Exporting BBCode is very similar to exporting HTML code.  But keep in mind, not all forums have all the BBCode support needed to view ExportHtmls BBCode format, so your mileage may vary.</p>
 <p>If adding a command to the settings file, it goes under the <code>bbcode_panel</code> setting.  These configurations will appear under the <code>Export to BBCode: Show Export Menu</code> command palette command.</p>
-<div class="codehilite"><pre><span class="c1">// Define configurations for the drop down export menu</span>
+<div class="codehilite"><pre><span></span><span class="c1">// Define configurations for the drop down export menu</span>
 <span class="s2">&quot;bbcode_panel&quot;</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
         <span class="s2">&quot;To Clipboard - Format as BBCode&quot;</span><span class="o">:</span> <span class="p">{</span>
@@ -336,7 +347,7 @@
 </table>
 <p>If you wish to bind a command to a key combination etc., the same settings as above can be used.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span class="p">{</span>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+alt+n&quot;</span><span class="p">],</span>
     <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;export_bbcode&quot;</span><span class="p">,</span>
     <span class="s2">&quot;args&quot;</span><span class="o">:</span> <span class="p">{</span>
@@ -438,7 +449,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../contributing/" class="btn btn-neutral float-right" title="Contributing &amp; Support"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../contributing/" class="btn btn-neutral float-right" title="Contributing &amp; Support">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../installation/" class="btn btn-neutral" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -449,9 +460,8 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>
+    <!-- Copyright etc -->
     
-    </p>
   </div>
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
@@ -467,7 +477,7 @@
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/facelessuser/ExportHtml" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../installation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
